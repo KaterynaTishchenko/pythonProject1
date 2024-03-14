@@ -2,9 +2,10 @@ def correct_sentence(text):
     if not text.endswith(('.', '!', '?')):
         text += '.'
 
-    corrected_text = text.capitalize()
+    if not text[0].isupper():
+        text = text[0].upper() + text[1:]
 
-    return corrected_text
+    return text
 
 input_sentence = input("Введіть речення для перевірки: ")
 
